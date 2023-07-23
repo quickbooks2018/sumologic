@@ -32,6 +32,12 @@ helm upgrade -- install my-opentelemetry-collector open-telemetry/opentelemetry-
   
 ```
 helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collection
+helm repo ls
+helm search repo sumologic
+helm search repo sumologic/sumologic --versions
+helm search repo sumologic/sumologic --version 3.10.0
+helm show values sumologic/sumologic --version 3.10.0
+helm show values sumologic/sumologic --version 3.10.0 > sumologic-values.yaml
 helm repo update
 ```
 

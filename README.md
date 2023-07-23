@@ -113,7 +113,7 @@ cat << EOF | kubectl apply -f -
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: ebs-claim
+  name: sumologic-sc
 spec:
   accessModes:
     - ReadWriteOnce

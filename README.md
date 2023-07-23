@@ -46,9 +46,9 @@ helm dependency update
 helm upgrade --install collection sumologic/sumologic \
 --namespace sumologic \
 --create-namespace \
---set sumologic.accessId="susOBL6C0Y9VTX" \
---set sumologic.accessKey="gW9fJvQ99PewBdT4sy51SY6J185BOdHLkozys2lWY06NkA393qq3aX1HEF7mY2eC" \
---set sumologic.clusterName="cloudgeeks-eks-dev" \
+--set sumologic.accessId="suZQKGwoR3ahrq" \
+--set sumologic.accessKey="wDk4zLHo39I4OaUkdeON65YRhfaA80LWSNzyXLZ6KbgdngFQFlv3zcrD6hMXCd5e" \
+--set sumologic.clusterName="cloudgeeks-dev" \
 --set sumologic.traces.enabled=true \
 --set opentelemetry-operator.enabled=true \
 --set opentelemetry-operator.createDefaultInstrumentation=true \

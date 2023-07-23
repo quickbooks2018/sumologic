@@ -100,9 +100,9 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: sumologic-sc
-provisioner: ebs.csi.aws.com
+provisioner: kubernetes.io/aws-ebs
 parameters:
-  type: gp3
+  type: gp2
 reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
 EOF

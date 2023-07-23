@@ -46,24 +46,15 @@ helm dependency update
 helm upgrade --install collection sumologic/sumologic \
 --namespace sumologic \
 --create-namespace \
---set sumologic.accessId="suWmfM14JgEI1O" \
---set sumologic.accessKey="53q4FiAfNdlxUqCdSV9lESKOi4KtzxBKMmIOaXkR2qB79a4h7ktEAFcniF7oaw39" \
---set sumologic.clusterName="cloudgeeks-dev" \
+--set sumologic.accessId="suknH9sBoLqmv9" \
+--set sumologic.accessKey="fPipKACpaTJU4zIvd3iK1Y8dGYSro06kDvMKgPmmXB8cTbDjp9xPfW3LJWn07HNw" \
+--set sumologic.clusterName="Kubernetes_cluster-2023-07-23T06:09:00.384Z" \
+--set sumologic.collectorName="kubernetes-2023-07-23T06:09:00.384Z" \
+--set sumologic.setup.monitors.enabled=false \
 --set sumologic.traces.enabled=true \
 --set opentelemetry-operator.enabled=true \
 --set opentelemetry-operator.createDefaultInstrumentation=true \
 --set opentelemetry-operator.instrumentationNamespaces="default\,kube-system"
-```
-
-```bash
-helm upgrade --install collection sumologic/sumologic \
-  --namespace=sumologic \
-  --create-namespace \
-  --set sumologic.accessId='suWmfM14JgEI1O' \
-  --set sumologic.accessKey='53q4FiAfNdlxUqCdSV9lESKOi4KtzxBKMmIOaXkR2qB79a4h7ktEAFcniF7oaw39' \
-  --set sumologic.clusterName=Kubernetes_cluster_cloudgeeks-dev  \
-  --set sumologic.collectorName=cloudgeeks-eks-dev \
-  --set sumologic.setup.monitors.enabled=false
 ```
 
 - Adding annotation in custom namespace

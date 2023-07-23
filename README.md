@@ -49,7 +49,7 @@ helm upgrade --install collection sumologic/sumologic \
 --create-namespace \
 --set sumologic.accessId="sus1yut4PIMdaE" \
 --set sumologic.accessKey="iaFw5MLbU9cStE3Arh6LD7w8oabm4c8lSVHhIaSZ9pw8odIPvJX89MUsrOcYwID0" \
---set sumologic.clusterName="Kubernetes_cluster-2023-07-23T06:21:26.444Z" \
+--set sumologic.clusterName="cloudgeeks-eks-dev" \
 --set sumologic.collectorName="kubernetes-2023-07-23T06:21:26.444Z" \
 --set sumologic.setup.monitors.enabled=false \
 --set sumologic.traces.enabled=true \

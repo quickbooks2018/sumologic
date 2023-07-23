@@ -64,3 +64,7 @@ kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-
 kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-python: "true"
 kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-nodejs: "true"
 ```
+
+- WhiteBox & BlackBox Instrumentation
+- https://github.com/quickbooks2018/aws/blob/master/open-telemetry.png
+- 

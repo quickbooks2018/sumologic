@@ -47,10 +47,10 @@ helm dependency update
 helm upgrade --install collection sumologic/sumologic \
 --namespace sumologic \
 --create-namespace \
---set sumologic.accessId="su4OhyjGowpgZE" \
---set sumologic.accessKey="HEfZXD1rFdRAOLbub93Bcgkjz0pYjnqdEUdxgegERd06gdXgvQl7wVeXi7wzSjCl" \
+--set sumologic.accessId="sus5TYZKrpPhvo" \
+--set sumologic.accessKey="YPESQTKD7DP33FcSovSfhEikO60vqk9zwAqwdbyPoLMn5EtienQrb0DZy3fyJfpt" \
 --set sumologic.clusterName="cloudgeeks-eks-dev" \
---set sumologic.collectorName="cloudgeeks-eks-dev" \
+--set sumologic.collectorName="kubernetes-2023-07-23T06:42:35.748Z" \
 --set sumologic.setup.monitors.enabled=false \
 --set sumologic.traces.enabled=true \
 --set opentelemetry-operator.enabled=true \

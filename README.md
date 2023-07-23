@@ -62,5 +62,5 @@ helm upgrade --install collection sumologic/sumologic \
 ```bash
 kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-java=true
 kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-python: "true"
-instrumentation.opentelemetry.io/inject-nodejs: "true"
+kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-nodejs: "true"
 ```

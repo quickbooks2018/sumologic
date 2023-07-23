@@ -63,7 +63,7 @@ helm upgrade --install collection sumologic/sumologic \
 --set opentelemetry-operator.instrumentationNamespaces="default\,kube-system"
 ```
 
-
+- Custom Storage Class
 ```bash
 helm upgrade --install collection sumologic/sumologic \
 --namespace sumologic \
@@ -76,8 +76,8 @@ helm upgrade --install collection sumologic/sumologic \
 --set sumologic.traces.enabled=true \
 --set opentelemetry-operator.enabled=true \
 --set opentelemetry-operator.createDefaultInstrumentation=true \
---set opentelemetry-operator.instrumentationNamespaces="default\,kube-system" \
---values=sumologic-values.yaml
+--set fluentd.persistence.storageClass="sumologic-sc" \
+--set opentelemetry-operator.instrumentationNamespaces="default\,kube-system"
 ```
 
 - Adding annotation in custom namespace

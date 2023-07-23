@@ -109,6 +109,7 @@ EOF
 ```
 - Storage Claim
 ```bash
+cat << EOF | kubectl apply -f -
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -120,5 +121,6 @@ spec:
   resources:
     requests:
       storage: 20Gi
+EOF
 ```
 

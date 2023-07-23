@@ -64,6 +64,8 @@ helm upgrade --install collection sumologic/sumologic \
 ```
 
 - Custom Storage Class
+- https://github.com/kubernetes-sigs/aws-ebs-csi-driver/blob/master/examples/kubernetes/dynamic-provisioning/manifests/storageclass.yaml
+  
 ```bash
 helm upgrade --install collection sumologic/sumologic \
 --namespace sumologic \
@@ -77,7 +79,6 @@ helm upgrade --install collection sumologic/sumologic \
 --set opentelemetry-operator.enabled=true \
 --set opentelemetry-operator.createDefaultInstrumentation=true \
 --set fluentd.persistence.storageClass="sumologic-sc" \
---set fluentd.persistence.size="30Gi" \
 --set opentelemetry-operator.instrumentationNamespaces="default\,kube-system"
 ```
 
@@ -106,3 +107,18 @@ reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
 EOF
 ```
+- Storage Claim
+```bash
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ebs-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: sumologic-sc
+  resources:
+    requests:
+      storage: 20Gi
+```
+

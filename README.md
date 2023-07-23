@@ -28,7 +28,8 @@ helm upgrade -- install my-opentelemetry-collector open-telemetry/opentelemetry-
 
 - https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v3.10/docs/README.md
 
-
+- https://www.youtube.com/watch?v=lLRtK1FaTgM
+  
 ```
 helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collection
 helm repo update

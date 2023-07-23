@@ -34,7 +34,9 @@ helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collect
 helm repo update
 ```
 
-- Sumologic otel Traces & auto instrumentation https://help.sumologic.com/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/
+- Sumologic otel Traces & auto instrumentation
+- https://help.sumologic.com/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/
+- https://help.sumologic.com/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments/
 
 ```bash
 helm dependency update
@@ -55,11 +57,11 @@ helm upgrade --install collection sumologic/sumologic \
 
 ```bash
 helm upgrade --install collection sumologic/sumologic \
-  --namespace=dev \
+  --namespace=sumologic \
   --create-namespace \
   --set sumologic.accessId='susOBL6C0Y9VTX' \
   --set sumologic.accessKey='gW9fJvQ99PewBdT4sy51SY6J185BOdHLkozys2lWY06NkA393qq3aX1HEF7mY2eC' \
   --set sumologic.clusterName=Kubernetes_cluster_cloudgeeks-eks-dev  \
   --set sumologic.collectorName=cloudgeeks-eks-dev \
-  --set sumologic.setup.monitors.enabled=false
+  --set sumologic.setup.monitors.enabled=true
 ```

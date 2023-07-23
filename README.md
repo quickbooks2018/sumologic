@@ -61,7 +61,7 @@ helm upgrade --install collection sumologic/sumologic \
   --create-namespace \
   --set sumologic.accessId='suZQKGwoR3ahrq' \
   --set sumologic.accessKey='wDk4zLHo39I4OaUkdeON65YRhfaA80LWSNzyXLZ6KbgdngFQFlv3zcrD6hMXCd5e' \
-  --set sumologic.clusterName=Kubernetes_cluster_cloudgeeks-eks-dev  \
+  --set sumologic.clusterName=Kubernetes_cluster_cloudgeeks-dev  \
   --set sumologic.collectorName=cloudgeeks-eks-dev \
   --set sumologic.setup.monitors.enabled=false
 ```

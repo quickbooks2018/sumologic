@@ -48,6 +48,21 @@ helm repo update
 ```bash
 helm dependency update
 ```
+```bash
+helm upgrade --install collection sumologic/sumologic \
+--namespace sumologic \
+--create-namespace \
+--set sumologic.accessId="abc" \
+--set sumologic.accessKey="abc" \
+--set sumologic.clusterName="kubernetes-eks-dev" \
+--set sumologic.collectorName="kubernetes-2023-07-23T06:42:35.748Z" \
+--set sumologic.setup.monitors.enabled=false \
+--set sumologic.traces.enabled=true \
+--set opentelemetry-operator.enabled=true \
+--set opentelemetry-operator.createDefaultInstrumentation=true \
+--set opentelemetry-operator.instrumentationNamespaces="default\,kube-system"
+```
+
 
 ```bash
 helm upgrade --install collection sumologic/sumologic \

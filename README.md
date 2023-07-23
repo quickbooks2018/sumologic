@@ -77,6 +77,7 @@ helm upgrade --install collection sumologic/sumologic \
 --set opentelemetry-operator.enabled=true \
 --set opentelemetry-operator.createDefaultInstrumentation=true \
 --set fluentd.persistence.storageClass="sumologic-sc" \
+--set fluentd.persistence.size="30Gi" \
 --set opentelemetry-operator.instrumentationNamespaces="default\,kube-system"
 ```
 

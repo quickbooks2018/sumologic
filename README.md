@@ -61,7 +61,8 @@ helm upgrade --install collection sumologic/sumologic \
 --set sumologic.traces.enabled=true \
 --set opentelemetry-operator.enabled=true \
 --set opentelemetry-operator.createDefaultInstrumentation=true \
---set opentelemetry-operator.instrumentationNamespaces="default\,kube-system"
+--set opentelemetry-operator.instrumentationNamespaces="default\,kube-system" \
+--values=sumologic-values.yaml
 ```
 
 - Adding annotation in custom namespace
@@ -74,3 +75,18 @@ kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-
 - WhiteBox & BlackBox Instrumentation
 - https://github.com/quickbooks2018/sumologic/blob/master/open-telemetry.png
 - https://github.com/quickbooks2018/sumologic/blob/master/Instrumentation.png
+
+-  Custom Storage Class
+```bash
+cat << EOF | kubectl apply -f -
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: sumologic-sc
+provisioner: ebs.csi.aws.com
+parameters:
+  type: gp3
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
+EOF
+```

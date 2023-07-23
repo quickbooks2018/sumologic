@@ -65,3 +65,10 @@ helm upgrade --install collection sumologic/sumologic \
   --set sumologic.collectorName=cloudgeeks-eks-dev \
   --set sumologic.setup.monitors.enabled=false
 ```
+
+- Adding annotation in custom namespace
+```bash
+kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-java=true
+kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-python: "true"
+instrumentation.opentelemetry.io/inject-nodejs: "true"
+```

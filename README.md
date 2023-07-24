@@ -73,6 +73,10 @@ kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-
 kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-python=true
 kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-nodejs=true
 ```
+- Removing annotation is custom namespace
+```bash
+kubectl annotate namespace nodejs instrumentation.opentelemetry.io/inject-nodejs-
+```
 
 - WhiteBox & BlackBox Instrumentation
 - https://github.com/quickbooks2018/sumologic/blob/master/open-telemetry.png

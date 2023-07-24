@@ -70,8 +70,8 @@ helm upgrade --install collection sumologic/sumologic \
 - Adding annotation in custom namespace
 ```bash
 kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-java=true
-kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-python: "true"
-kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-nodejs: "true"
+kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-python=true
+kubectl annotate namespace my-namespace instrumentation.opentelemetry.io/inject-nodejs=true
 ```
 
 - WhiteBox & BlackBox Instrumentation

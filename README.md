@@ -81,6 +81,29 @@ helm upgrade --install collection sumologic/sumologic \
 --set opentelemetry-operator.instrumentationNamespaces="default\,kube-system"
 ```
 
+- Deployment with Minimal Resources
+  - 
+https://help.sumologic.com/docs/observability/kubernetes/quickstart/#:~:text=Resource%20requirements%E2%80%8B,Kubernetes%20Helm%20Chart%20is%20deployed.
+```
+helm upgrade --install collection sumologic/sumologic \
+--version 3.10.0 \
+--namespace sumologic \
+--create-namespace \
+--set sumologic.accessId="abc" \
+--set sumologic.accessKey="abc" \
+--set sumologic.clusterName="kubernetes-eks-dev" \
+--set sumologic.collectorName="kubernetes-2023-07-23T06:42:35.748Z" \
+--set sumologic.setup.monitors.enabled=false \
+--set sumologic.traces.enabled=true \
+--set opentelemetry-operator.enabled=true \
+--set opentelemetry-operator.createDefaultInstrumentation=true \
+--set opentelemetry-operator.instrumentation.nodejs.traces.enabled=true \
+--set opentelemetry-operator.instrumentationNamespaces="default\,kube-system" \
+--set metadata.metrics.statefulset.replicaCount=1 \
+--set metadata.metrics.statefulset.resources.requests.memory=100Mi \
+--set metadata.metrics.statefulset.resources.requests.cpu=50m
+```
+
 - Custom Storage Class
 - https://github.com/kubernetes-sigs/aws-ebs-csi-driver/blob/master/examples/kubernetes/dynamic-provisioning/manifests/storageclass.yaml
   

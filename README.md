@@ -66,6 +66,7 @@ helm upgrade --install collection sumologic/sumologic \
 - NodeJs
 ```bash
 helm upgrade --install collection sumologic/sumologic \
+--version 3.10.0 \
 --namespace sumologic \
 --create-namespace \
 --set sumologic.accessId="abc" \

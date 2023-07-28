@@ -134,3 +134,63 @@ Instrumentation.opentelemetry.io: "true" # Enable OpenTelemetry
 ```annotation
 instrumentation.opentelemetry.io/inject-python: "true"  
 ```
+- Sample App with Istio
+```deployment
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: example-app
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: python-basic-secret
+  namespace: example-app
+  labels:
+    app: basic-secret
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-basic-secret-env
+  namespace: example-app
+  labels:
+    Instrumentation.opentelemetry.io: "true" # Enable OpenTelemetry
+    app: basic-secret
+spec:
+  selector:
+    matchLabels:
+      app: basic-secret
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        instrumentation.opentelemetry.io/inject-python: "true"
+        vault.hashicorp.com/agent-init-first: 'true'
+        vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/tls-skip-verify: "true"
+        vault.hashicorp.com/agent-inject-secret-helloworld: "secret/basic-secret/helloworld"
+        vault.hashicorp.com/agent-inject-template-helloworld: |
+          {{ with secret "secret/data/basic-secret/helloworld" -}}
+          export USERNAME="{{ .Data.data.username }}"
+          export PASSWORD="{{ .Data.data.password }}"
+          {{- end }}
+        vault.hashicorp.com/role: "basic-secret-role"
+      labels:
+        app: basic-secret
+    spec:
+      serviceAccountName: basic-secret
+      containers:
+        - name: app
+          image: quickbooks2018/python:metrics
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              sleep 3
+              echo ">> creds from vault"
+              if [ -f /vault/secrets/helloworld ]; then
+                cat /vault/secrets/helloworld
+                . /vault/secrets/helloworld
+              fi
+              "python" "metrics.py"
+``` 

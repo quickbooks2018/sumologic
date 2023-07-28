@@ -194,3 +194,28 @@ spec:
               fi
               "python" "metrics.py"
 ``` 
+
+- Istio Helm Chart SumoLogic
+```helm
+helm upgrade --install collection sumologic/sumologic \
+--version 3.10.0 \
+--namespace sumologic \
+--create-namespace \
+--set sumologic.accessId=abc \
+--set sumologic.accessKey=abc \
+--set sumologic.clusterName="eks-dev" \
+--set sumologic.collectorName="eks-dev" \
+--set sumologic.setup.monitors.enabled=false \
+--set sumologic.traces.enabled=true \
+--set opentelemetry-operator.enabled=true \
+--set opentelemetry-operator.createDefaultInstrumentation=true \
+--set opentelemetry-operator.instrumentation.nodejs.traces.enabled=true \
+--set opentelemetry-operator.instrumentationNamespaces="default\,nodejs\,example-app\,golang" \
+--set metadata.metrics.statefulset.replicaCount=1 \
+--set metadata.metrics.statefulset.resources.requests.memory=100Mi \
+--set metadata.metrics.statefulset.resources.requests.cpu=50m \
+--set meshConfig.enableTracing=true \
+--set meshConfig.defaultConfig.tracing.openCensusAgent.address=collection-otelagent.sumologic:55678
+```
+
+- Istio Installation with values yaml (meshConfig) https://github.com/quickbooks2018/kubernetes-istio.git

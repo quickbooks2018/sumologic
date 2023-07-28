@@ -122,3 +122,10 @@ kubectl annotate namespace nodejs instrumentation.opentelemetry.io/inject-nodejs
 - WhiteBox & BlackBox Instrumentation
 - https://github.com/quickbooks2018/sumologic/blob/master/open-telemetry.png
 - https://github.com/quickbooks2018/sumologic/blob/master/Instrumentation.png
+
+- Opentelemetry Auto-Instrumentation this will launch a OTEL container in a pod [label deployment (Required)]
+```
+kubectl label deployment example-app Instrumentation.opentelemetry.io: "true" # Enable OpenTelemetry
+  
+Instrumentation.opentelemetry.io: "true" # Enable OpenTelemetry
+```

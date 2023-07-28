@@ -219,3 +219,5 @@ helm upgrade --install collection sumologic/sumologic \
 ```
 
 - Istio Installation with values yaml (meshConfig) https://github.com/quickbooks2018/kubernetes-istio.git
+
+- Automatic tracing https://opentelemetry.io/docs/kubernetes/operator/automatic/

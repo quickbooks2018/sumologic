@@ -61,7 +61,7 @@ helm upgrade --install collection sumologic/sumologic \
 --set sumologic.traces.enabled=true \
 --set opentelemetry-operator.enabled=true \
 --set opentelemetry-operator.createDefaultInstrumentation=true \
---set opentelemetry-operator.instrumentationNamespaces="default\,kube-system"
+--set opentelemetry-operator.instrumentationNamespaces="default\,example-app"
 ```
 - NodeJs
 ```bash
@@ -78,7 +78,7 @@ helm upgrade --install collection sumologic/sumologic \
 --set opentelemetry-operator.enabled=true \
 --set opentelemetry-operator.createDefaultInstrumentation=true \
 --set opentelemetry-operator.instrumentation.nodejs.traces.enabled=true \
---set opentelemetry-operator.instrumentationNamespaces="default\,kube-system"
+--set opentelemetry-operator.instrumentationNamespaces="default\,example-app"
 ```
 
 - Deployment with Minimal Resources
@@ -98,7 +98,7 @@ helm upgrade --install collection sumologic/sumologic \
 --set opentelemetry-operator.enabled=true \
 --set opentelemetry-operator.createDefaultInstrumentation=true \
 --set opentelemetry-operator.instrumentation.nodejs.traces.enabled=true \
---set opentelemetry-operator.instrumentationNamespaces="default\,kube-system" \
+--set opentelemetry-operator.instrumentationNamespaces="default\,example-app" \
 --set metadata.metrics.statefulset.replicaCount=1 \
 --set metadata.metrics.statefulset.resources.requests.memory=100Mi \
 --set metadata.metrics.statefulset.resources.requests.cpu=50m

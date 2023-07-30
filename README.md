@@ -49,6 +49,7 @@ helm repo update
 helm dependency update
 ```
 ```bash
+helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collection
 helm upgrade --install collection sumologic/sumologic \
 --version 3.10.0 \
 --namespace sumologic \
@@ -65,6 +66,7 @@ helm upgrade --install collection sumologic/sumologic \
 ```
 - NodeJs
 ```bash
+helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collection
 helm upgrade --install collection sumologic/sumologic \
 --version 3.10.0 \
 --namespace sumologic \
@@ -85,6 +87,7 @@ helm upgrade --install collection sumologic/sumologic \
   - 
 https://help.sumologic.com/docs/observability/kubernetes/quickstart/#:~:text=Resource%20requirements%E2%80%8B,Kubernetes%20Helm%20Chart%20is%20deployed.
 ```
+helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collection
 helm upgrade --install collection sumologic/sumologic \
 --version 3.10.0 \
 --namespace sumologic \
@@ -197,6 +200,7 @@ spec:
 
 - Istio Helm Chart SumoLogic
 ```helm
+helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collection
 helm upgrade --install collection sumologic/sumologic \
 --version 3.10.0 \
 --namespace sumologic \

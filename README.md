@@ -126,11 +126,9 @@ kubectl annotate namespace nodejs instrumentation.opentelemetry.io/inject-nodejs
 - https://github.com/quickbooks2018/sumologic/blob/master/Instrumentation.png
 
 - Opentelemetry Auto-Instrumentation this will launch a OTEL container in a pod [label deployment (Required)]
-- Label
+- Label required
 ```label
 kubectl label deployment example-app Instrumentation.opentelemetry.io: "true" # Enable OpenTelemetry
-  
-Instrumentation.opentelemetry.io: "true" # Enable OpenTelemetry
 ```
 - Annotation required in deployment
 ```annotation

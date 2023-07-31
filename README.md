@@ -84,8 +84,7 @@ helm upgrade --install collection sumologic/sumologic \
 ```
 
 - Deployment with Minimal Resources
-  - 
-https://help.sumologic.com/docs/observability/kubernetes/quickstart/#:~:text=Resource%20requirements%E2%80%8B,Kubernetes%20Helm%20Chart%20is%20deployed.
+- https://help.sumologic.com/docs/observability/kubernetes/quickstart/#:~:text=Resource%20requirements%E2%80%8B,Kubernetes%20Helm%20Chart%20is%20deployed.
 ```
 helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collection
 helm upgrade --install collection sumologic/sumologic \

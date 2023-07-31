@@ -195,6 +195,8 @@ spec:
               "python" "metrics.py"
 ``` 
 
+- https://help.sumologic.com/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/istio/
+  
 - Istio Helm Chart SumoLogic
 ```helm
 helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collection

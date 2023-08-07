@@ -1,12 +1,12 @@
 variable "cluster_name" {
   description = "The name of the cluster"
-  default     = "1.23"
+  default     = "eks"
   type        = string
 }
 
 variable "cluster_version" {
   description = "The version of the cluster"
-  default     = ""
+  default     = "1.23"
   type        = string
 }
 
